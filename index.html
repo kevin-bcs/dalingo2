@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7fbff">
+  <meta name="description" content="Dalingo: aprende ruso jugando al memorama.">
+  <title>Dalingo — ¡Aprende jugando!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Dalingo inicio"><span class="brand-mark">D</span><span>dalingo<span class="brand-dot">.</span><small>APRENDE JUGANDO</small></span></a>
+      <div class="top-stats"><span class="streak">✦ <b id="xpTop">120</b> XP</span><button class="icon-button" id="soundToggle" aria-label="Activar o silenciar sonidos" title="Sonido">♫</button></div>
+    </header>
+
+    <main>
+      <section class="welcome-row">
+        <div class="welcome-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> TU AVENTURA DE IDIOMAS</div><h1>¡Hola, explorador! <span class="wave">✋</span></h1><p>Encuentra las parejas y descubre el ruso, una tarjeta a la vez.</p></div>
+        <div class="mascot" aria-label="Mascota zorro de Dalingo"><span class="sparkle s1">✦</span><span class="fox-face"><span class="ear left"></span><span class="ear right"></span><span class="fox-eye eye-left"></span><span class="fox-eye eye-right"></span><span class="fox-muzzle"></span><span class="fox-nose"></span><span class="cheek cheek-left"></span><span class="cheek cheek-right"></span></span><span class="sparkle s2">✧</span></div>
+      </section>
+
+      <section class="language-banner">
+        <div class="language-copy"><span class="mini-label">TU PRÓXIMO DESTINO</span><h2>Español <span class="arrow">→</span> Русский</h2><p>¡Juega, recuerda y gana estrellas!</p></div>
+        <div class="language-bubbles" aria-hidden="true"><span>Я</span><span>あ</span><span>Ж</span></div>
+      </section>
+
+      <section class="mode-section">
+        <div class="section-heading"><div><span class="mini-label">ELIGE TU AVENTURA</span><h2>¿Cómo quieres jugar?</h2></div><span class="section-emoji">🎮</span></div>
+        <div class="mode-grid">
+          <button class="mode-card selected" data-mode="solo" type="button"><span class="mode-icon solo-icon">🧠</span><span class="mode-text"><strong>Yo solito</strong><small>Entrena tu memoria a tu ritmo</small></span><span class="mode-check">✓</span></button>
+          <button class="mode-card" data-mode="local" type="button"><span class="mode-icon duo-icon">👯</span><span class="mode-text"><strong>¡A jugar juntos!</strong><small>Desafía a alguien a tu lado</small></span><span class="mode-check">✓</span></button>
+        </div>
+      </section>
+
+      <section class="level-section">
+        <div class="section-heading"><div><span class="mini-label">PASO A PASO</span><h2>Elige tu nivel</h2></div><span class="level-count">10 niveles</span></div>
+        <div class="level-grid" id="levelGrid" aria-label="Niveles de dificultad"></div>
+      </section>
+
+      <section class="game-panel hidden" id="gamePanel" aria-live="polite">
+        <div class="game-header"><button class="back-button" id="backButton" type="button">← Volver</button><div class="game-title"><span class="mini-label" id="gameLevelLabel">NIVEL 1</span><h2 id="gameTitle">Primeras palabras</h2></div><button class="icon-button" id="restartButton" type="button" aria-label="Reiniciar partida">↻</button></div>
+        <div class="score-strip">
+          <div class="score-box"><small>PAREJAS</small><strong id="pairsScore">0 / 3</strong></div>
+          <div class="score-box"><small>INTENTOS</small><strong id="movesScore">0</strong></div>
+          <div class="score-box" id="turnBox"><small id="turnLabel">TU TURNO</small><strong id="playerScore">⭐ 0</strong></div>
+        </div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <p class="game-instruction" id="gameInstruction">Encuentra la palabra en ruso que corresponde a cada palabra en español.</p>
+        <div class="memory-grid" id="memoryGrid"></div>
+        <div class="game-footer"><span>💡 <span id="hintText">¿Necesitas ayuda? Escucha una palabra después de encontrarla.</span></span><button class="soft-button" id="hintButton" type="button">Pista ✨</button></div>
+        <div class="result-card hidden" id="resultCard"><div class="result-confetti">🎉 ⭐ 🎉</div><h2 id="resultTitle">¡Lo lograste!</h2><p id="resultText">Has encontrado todas las parejas.</p><div class="result-actions"><button class="primary-button" id="nextButton" type="button">Siguiente nivel →</button><button class="soft-button" id="againButton" type="button">Jugar otra vez</button></div></div>
+      </section>
+      <footer><span class="footer-mascot">✦</span> Hecho para mentes curiosas <span class="footer-heart">♥</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
